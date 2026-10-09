@@ -81,3 +81,17 @@ source venv/bin/activate
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Agent Skill (alternative to the Streamlit UI)
+
+Prefer a conversational interface over the web app? [`skill/`](./skill) contains a
+[SKILL.md-format Agent Skill](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+that teaches an AI agent (Claude Code, Kiro, OpenClaw, or any SKILL.md-compatible
+agent) to search EC2 Capacity Blocks and SageMaker Training Plans directly via
+the AWS CLI — translating NVIDIA GPU names, VRAM requirements, and architecture
+names (Hopper, Ampere, Blackwell, Ada Lovelace) into AWS instance types along the
+way. Same underlying APIs as this app, no scripts or framework dependencies.
+
+Copy `skill/SKILL.md` and `skill/REFERENCE.md` into your agent's skills directory,
+or point your agent at this repo directly. See [`skill/SKILL.md`](./skill/SKILL.md)
+for the full conversation flow and API commands.
