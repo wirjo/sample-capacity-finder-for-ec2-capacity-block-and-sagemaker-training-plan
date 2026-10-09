@@ -2,6 +2,8 @@
 
 🔎 A Streamlit app for exploring available AWS [EC2 Capacity Blocks](https://aws.amazon.com/ec2/capacityblocks/) and [SageMaker Training Plans](https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html) across regions and instance types.
 
+> **Using Claude Code, Kiro, or a similar coding agent?** Try the [GPU Capacity Finder Agent Skill](https://github.com/aws-samples/sample-apj-sup-sa/tree/feat/gpu-capacity-finder-skill/ai-infra/gpu-capacity-finder-skill) instead — a conversational alternative to this web app, same underlying APIs. Maintained in that repo, not duplicated here.
+
 <img src="./assets/app-screenshot.png" alt="App Screenshot" width="1000">
 
 
@@ -81,17 +83,3 @@ source venv/bin/activate
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
-## Agent Skill (alternative to the Streamlit UI)
-
-Prefer a conversational interface over the web app? [`skill/`](./skill) contains a
-[SKILL.md-format Agent Skill](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
-that teaches an AI agent (Claude Code, Kiro, OpenClaw, or any SKILL.md-compatible
-agent) to search EC2 Capacity Blocks and SageMaker Training Plans directly via
-the AWS CLI — translating NVIDIA GPU names, VRAM requirements, and architecture
-names (Hopper, Ampere, Blackwell, Ada Lovelace) into AWS instance types along the
-way. Same underlying APIs as this app, no scripts or framework dependencies.
-
-Copy `skill/SKILL.md` and `skill/REFERENCE.md` into your agent's skills directory,
-or point your agent at this repo directly. See [`skill/SKILL.md`](./skill/SKILL.md)
-for the full conversation flow and API commands.
